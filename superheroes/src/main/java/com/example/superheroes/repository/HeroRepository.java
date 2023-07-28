@@ -15,4 +15,5 @@ public interface HeroRepository extends JpaRepository<Hero, Integer> {
     List<Hero> findHeroesNameStartingWithLetter(String letter);
 
     List<Hero> findTop3ByOrderByNameDesc();
+
 }

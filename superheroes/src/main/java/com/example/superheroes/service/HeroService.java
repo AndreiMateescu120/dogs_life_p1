@@ -4,7 +4,6 @@ import com.example.superheroes.model.Hero;
 import com.example.superheroes.repository.HeroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
@@ -21,11 +20,16 @@ public class HeroService {
     }
 
     public List<Hero> getAllHeroes(){
+
         return heroRepository.findAll();
     }
 
     public List<Hero> getLastThreeHeroesByName(){
+
         return heroRepository.findTop3ByOrderByNameDesc();
     }
 
+    public Hero saveHero(Hero hero){
+        return heroRepository.save(hero);
+    }
 }
