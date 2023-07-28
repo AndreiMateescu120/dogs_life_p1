@@ -54,4 +54,20 @@ public class DogsHandler {
 
         return itsDogsRepo.findById(id);
     }
+
+    long updateDogDetails(Dog dog, long newID){
+
+        Dog aux_dog = getDogByID(dog.getId());
+        //itsDogsRepo.delete(aux_dog);
+
+        aux_dog.setId(newID);
+
+        return itsDogsRepo.save(aux_dog);
+    }
+
+    public boolean removeDog(long id){
+        Dog dog = itsDogsRepo.findById(id);
+
+        return itsDogsRepo.delete(dog);
+    }
 }
