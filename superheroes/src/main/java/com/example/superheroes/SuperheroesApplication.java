@@ -28,7 +28,7 @@ public class SuperheroesApplication implements CommandLineRunner {
 
 		List<Hero> heroes = heroService.getLastThreeHeroesByName();
 
-		for(Hero hero:heroes)
-			System.out.println(hero);
+		//for(Hero hero:heroes)
+			//System.out.println(hero);
 	}
 }
