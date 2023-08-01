@@ -3,15 +3,14 @@ import images from '../index';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from "react";
-
-
+import { Col, Row, Form } from "react-bootstrap";
 
 const HeroDetail = (props) => {
-  const[counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
 
-const incrementCounter =()=>{
-  setCounter(counter+1);
-}
+  const incrementCounter = () => {
+    setCounter(counter + 1);
+  }
   return (
     <Card >
       <div className="imgContainer">
@@ -20,9 +19,11 @@ const incrementCounter =()=>{
       <Card.Body >
         <Card.Title >Alias: {props.info.alias}</Card.Title>
         <Card.Text >Name: {props.info.name}</Card.Text>
-        <Card.Text>Likes: {counter}</Card.Text>
-        <Button variant="primary" onClick={incrementCounter}>Like</Button>
-      </Card.Body>
+        <Row>
+          <Col><Button variant="primary" onClick={incrementCounter}>Like</Button></Col>
+          <Col>{counter > 0 && <Card.Text >Likes: {counter}</Card.Text >}</Col>
+        </Row>     
+         </Card.Body>
     </Card>
   )
 }
