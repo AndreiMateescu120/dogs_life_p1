@@ -8,9 +8,10 @@ import { Col, Row, Form } from "react-bootstrap";
 const HeroDetail = (props) => {
   const [counter, setCounter] = useState(0);
 
-  const incrementCounter = () => {
-    setCounter(counter + 1);
-  }
+  const incrementCounter =()=>{
+    setCounter(counter+1);
+    props.parentCount(props.info.alias);
+}
   return (
     <Card >
       <div className="imgContainer">
